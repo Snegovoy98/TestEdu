@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="shortcut icon" href="{{ asset('images/icon.ico') }}" type="image/ico">
+            <link rel="stylesheet" href="{{ asset('build/js/app.css') }}">
+
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        <script src="{{ asset('build/js/app.js')}}"></script>
+        {% block javascripts %}
+
+        {% endblock %}
+    </body>
+</html>
