@@ -89,6 +89,16 @@ class RegistrationType extends AbstractType
                     'placeholder' => 'Choose an option'],
                 'label' => 'Класс'
             ])
+            ->add('gender', ChoiceType::class, [
+                'attr' => ['class' => 'gender',
+                           'name'  => 'gender',
+                           'id'    => 'gender',
+                           'placeholder' => 'Choose an option'],
+                'choice' => [
+                    'Мужской' => 'male',
+                    'Женский' => 'female'
+                ]
+            ])
             ->add('save', SubmitType::class)
             ;
     }
