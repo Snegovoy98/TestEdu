@@ -94,7 +94,7 @@ class RegistrationType extends AbstractType
                            'name'  => 'gender',
                            'id'    => 'gender',
                            'placeholder' => 'Choose an option'],
-                'choice' => [
+                'choices' => [
                     'Мужской' => 'male',
                     'Женский' => 'female'
                 ]
