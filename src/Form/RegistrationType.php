@@ -97,7 +97,8 @@ class RegistrationType extends AbstractType
                 'choices' => [
                     'Мужской' => 'male',
                     'Женский' => 'female'
-                ]
+                ],
+                'label' => 'Пол'
             ])
             ->add('save', SubmitType::class)
             ;
