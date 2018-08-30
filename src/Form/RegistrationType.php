@@ -20,50 +20,50 @@ class RegistrationType extends AbstractType
             ->add('surname', TextType::class, [
              'attr' => ['class'       => 'form-control',
                         'name'        => 'surname',
-                        'id'          =>  'surname',
+                        'id'          => 'surname',
                         'placeholder' =>   'Введите фамилию' ],
                'label' => 'Фамилия'
             ])
             ->add('name', TextType::class, [
-              'attr' => ['class' => 'form-control',
-                          'name' => 'name',
-                          'id'   =>  'name',
-                  'placeholder' =>   'Введите имя' ],
+              'attr' => ['class'       => 'form-control',
+                         'name'        => 'name',
+                         'id'          =>  'name',
+                         'placeholder' =>   'Введите имя' ],
                 'label' => 'Имя'
             ])
             ->add('fathername', TextType::class, [
-               'attr' => ['class' => 'form-control',
-                           'name' => 'fathername',
-                            'id'  => 'fathername',
-                   'placeholder' =>   'Введите отчество'],
+               'attr' => ['class'       => 'form-control',
+                          'name'        => 'fathername',
+                          'id'          => 'fathername',
+                          'placeholder' =>   'Введите отчество'],
                 'label' => 'Отчество'
             ])
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'form-control',
-                           'name'  => 'email',
-                            'id'   => 'email',
-                    'placeholder'  => 'Введите email'],
+                'attr' => ['class'        => 'form-control',
+                           'name'         => 'email',
+                           'id'           => 'email',
+                           'placeholder'  => 'Введите email'],
                 'label' => 'Email'
             ])
             ->add('password', PasswordType::class, [
-                'attr' => ['class' => 'form-control',
-                           'name'  => 'password',
-                           'id'    => 'password',
-                    'placeholder' =>   'Введите пароль'],
+                'attr' => ['class'       => 'form-control',
+                           'name'        => 'password',
+                           'id'          => 'password',
+                           'placeholder' =>   'Введите пароль'],
                 'label' => 'Пароль'
 
             ])
             ->add('password_conf', PasswordType::class, [
-                'attr' => ['class' => 'form-control',
-                            'name' => 'password_conf',
-                            'id'   => 'password_conf',
-                    'placeholder'  => 'Введите повторно пароль'],
+                'attr' => ['class'        => 'form-control',
+                           'name'         => 'password_conf',
+                           'id'           => 'password_conf',
+                           'placeholder'  => 'Введите повторно пароль'],
                 'label' => 'Повторите пароль'
             ])
             ->add('born', BirthdayType::class, [
-                'attr' => ['class' => 'custom-select d-block w-100',
-                            'name' => 'born_date',
-                            'id'   => 'born_date'],
+                'attr' => ['class'  => 'custom-select d-block w-100',
+                           'name'   => 'born_date',
+                            'id'    => 'born_date'],
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'label' => 'Дата рождение'
