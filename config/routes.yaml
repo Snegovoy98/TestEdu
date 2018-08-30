@@ -5,3 +5,7 @@ login:
 registration:
   path: /registration
   controller: App\Controller\RegistrationController::index
+
+user:
+  path: /user
+  controller: App\Controller\UserController::index
