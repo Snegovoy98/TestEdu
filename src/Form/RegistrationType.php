@@ -68,6 +68,13 @@ class RegistrationType extends AbstractType
                 'format' => 'yyyy-MM-dd',
                 'label' => 'Дата рождение'
             ])
+            ->add('regions', ChoiceType::class, [
+                'attr' => ['class' => 'custom-select d-block w-100',
+                    'name'  => 'region',
+                    'id'   => 'region',
+                    'placeholder' => 'Choose an option'],
+                'label' => 'Город'
+            ])
             ->add('cities', ChoiceType::class, [
                 'attr' => ['class' => 'custom-select d-block w-100',
                            'name'  => 'city',
