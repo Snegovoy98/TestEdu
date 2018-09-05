@@ -73,7 +73,7 @@ class RegistrationType extends AbstractType
                     'name'  => 'region',
                     'id'   => 'region',
                     'placeholder' => 'Choose an option'],
-                'label' => 'Город'
+                'label' => 'Область'
             ])
             ->add('cities', ChoiceType::class, [
                 'attr' => ['class' => 'custom-select d-block w-100',
