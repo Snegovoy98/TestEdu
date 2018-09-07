@@ -2,6 +2,9 @@
     "composer/ca-bundle": {
         "version": "1.1.2"
     },
+    "container-interop/container-interop": {
+        "version": "1.2.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -94,6 +97,9 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.1.1"
+    },
+    "paragonie/random_compat": {
+        "version": "v2.0.17"
     },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"
@@ -410,7 +416,16 @@
     "zendframework/zend-code": {
         "version": "3.3.1"
     },
+    "zendframework/zend-crypt": {
+        "version": "3.3.0"
+    },
     "zendframework/zend-eventmanager": {
+        "version": "3.2.1"
+    },
+    "zendframework/zend-math": {
+        "version": "3.1.1"
+    },
+    "zendframework/zend-stdlib": {
         "version": "3.2.1"
     }
 }

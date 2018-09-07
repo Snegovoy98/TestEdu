@@ -24,7 +24,8 @@
         "symfony/validator": "*",
         "symfony/web-link": "*",
         "symfony/webpack-encore-pack": "^1.0",
-        "symfony/yaml": "*"
+        "symfony/yaml": "*",
+        "zendframework/zend-crypt": "^3.3"
     },
     "require-dev": {
         "sensiolabs/security-checker": "^4.1",
