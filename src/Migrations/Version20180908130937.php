@@ -16,7 +16,7 @@ final class Version20180908130937 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
         $this->addSql('CREATE TABLE regions (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, short_name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
-        $this->addSql("INSERT INTO regions (name, shortname) VALUES ('Винницкая область', 'АB'), 
+        $this->addSql("INSERT INTO regions (name, short_name) VALUES ('Винницкая область', 'АB'), 
                                                                ('Волынская область', 'АC'),
                                                                ('Сичеславская область', 'AЕ'),
                                                                ('Донецкая область', 'AН'),
