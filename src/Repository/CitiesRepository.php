@@ -46,4 +46,5 @@ class CitiesRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
 }
