@@ -7,7 +7,7 @@ Encore
 
     .addEntry('js/app', './assets/js/app.js')
 
-    .addStyleEntry('css/app.css', './assets/css/app.css')
+    .addStyleEntry('css/app.css', './assets/css/app.css.css')
 
     .cleanupOutputBeforeBuild()
 
