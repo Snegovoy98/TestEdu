@@ -14,6 +14,10 @@ use Symfony\Component\Form\Extension\Core\Type\{TextType,
 
 class RegistrationType extends AbstractType
 {
+    /** This Type use for rendering registration form
+     * @param FormBuilderInterface $builder
+     * @param array $option
+     */
     public function buildForm(FormBuilderInterface $builder, array $option)
     {
         $builder
