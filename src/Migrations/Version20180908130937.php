@@ -18,6 +18,7 @@ final class Version20180908130937 extends AbstractMigration
         $this->addSql('CREATE TABLE regions (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, short_name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
         $this->addSql("INSERT INTO regions (name, short_name) VALUES ('Винницкая область', 'АB'), 
                                                                           ('Волынская область', 'АC'),
+                                                                          ('Днепропетровская область', 'AЕ'),
                                                                           ('Донецкая область', 'AН'),
                                                                           ('Житомирская область', 'АM'), 
                                                                           ('Закарпатская область', 'АO'),
@@ -31,7 +32,6 @@ final class Version20180908130937 extends AbstractMigration
                                                                           ('Одесская область', 'BН'),
                                                                           ('Полтавская область', 'ВI'),
                                                                           ('Ровенская область', 'BК'),
-                                                                          ('Сичеславская область', 'AЕ'),
                                                                           ('Сумская область', 'ВM' ),
                                                                           ('Тернопольская область', 'ВO'),
                                                                           ('Харьковская область', 'АX'),
