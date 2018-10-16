@@ -17,41 +17,24 @@ class Classes
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $class_number;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\School")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Schools")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $school;
+    private $class_number;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getClassNumber(): ?int
+    public function getClassNumber(): ?Schools
     {
         return $this->class_number;
     }
 
-    public function setClassNumber(int $class_number): self
+    public function setClassNumber(?Schools $class_number): self
     {
         $this->class_number = $class_number;
-
-        return $this;
-    }
-
-    public function getSchool(): ?School
-    {
-        return $this->school;
-    }
-
-    public function setSchool(?School $school): self
-    {
-        $this->school = $school;
 
         return $this;
     }
