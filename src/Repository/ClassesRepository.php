@@ -21,7 +21,7 @@ class ClassesRepository extends ServiceEntityRepository
 
     /**
      * @return Classes[] Returns an array of Classes objects
-    */
+     */
 
     public function findByExampleField($value)
     {
@@ -35,8 +35,6 @@ class ClassesRepository extends ServiceEntityRepository
         ;
     }
 
-
-
     public function findOneBySomeField($value): ?Classes
     {
         return $this->createQueryBuilder('c')
@@ -46,5 +44,4 @@ class ClassesRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-
 }
