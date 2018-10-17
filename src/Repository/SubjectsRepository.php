@@ -35,8 +35,6 @@ class SubjectsRepository extends ServiceEntityRepository
         ;
     }
 
-
-
     public function findOneBySomeField($value): ?Subjects
     {
         return $this->createQueryBuilder('s')
@@ -46,5 +44,4 @@ class SubjectsRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-
 }
