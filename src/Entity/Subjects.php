@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,19 +22,10 @@ class Subjects
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Classes")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Classes")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $class;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $no;
-
-    public function __construct()
-    {
-        $this->class = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -55,40 +44,14 @@ class Subjects
         return $this;
     }
 
-    /**
-     * @return Collection|Classes[]
-     */
-    public function getClass(): Collection
+    public function getClass(): ?Classes
     {
         return $this->class;
     }
 
-    public function addClass(Classes $class): self
+    public function setClass(?Classes $class): self
     {
-        if (!$this->class->contains($class)) {
-            $this->class[] = $class;
-        }
-
-        return $this;
-    }
-
-    public function removeClass(Classes $class): self
-    {
-        if ($this->class->contains($class)) {
-            $this->class->removeElement($class);
-        }
-
-        return $this;
-    }
-
-    public function getNo(): ?string
-    {
-        return $this->no;
-    }
-
-    public function setNo(string $no): self
-    {
-        $this->no = $no;
+        $this->class = $class;
 
         return $this;
     }
