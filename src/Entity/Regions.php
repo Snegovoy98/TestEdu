@@ -24,7 +24,7 @@ class Regions
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $shortName;
+    private $short_name;
 
     public function getId(): ?int
     {
@@ -45,12 +45,12 @@ class Regions
 
     public function getShortName(): ?string
     {
-        return $this->shortName;
+        return $this->short_name;
     }
 
-    public function setShortName(string $shortName): self
+    public function setShortName(string $short_name): self
     {
-        $this->shortName = $shortName;
+        $this->short_name = $short_name;
 
         return $this;
     }
