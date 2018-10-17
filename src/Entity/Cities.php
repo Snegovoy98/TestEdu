@@ -25,7 +25,7 @@ class Cities
      * @ORM\ManyToOne(targetEntity="App\Entity\Regions")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $regions;
+    private $region;
 
     public function getId(): ?int
     {
@@ -44,14 +44,14 @@ class Cities
         return $this;
     }
 
-    public function getRegions(): ?Regions
+    public function getRegion(): ?Regions
     {
-        return $this->regions;
+        return $this->region;
     }
 
-    public function setRegions(?Regions $regions): self
+    public function setRegion(?Regions $region): self
     {
-        $this->regions = $regions;
+        $this->region = $region;
 
         return $this;
     }
