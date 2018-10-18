@@ -35,7 +35,6 @@ class SchoolsRepository extends ServiceEntityRepository
         ;
     }
 
-
     public function findOneBySomeField($value): ?Schools
     {
         return $this->createQueryBuilder('s')
