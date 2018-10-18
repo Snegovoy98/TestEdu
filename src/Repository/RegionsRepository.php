@@ -44,5 +44,4 @@ class RegionsRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-
-}
+ }
