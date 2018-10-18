@@ -19,17 +19,17 @@ class Users
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Surname;
+    private $surname;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Name;
+    private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $fatherName;
+    private $fathername;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -56,24 +56,29 @@ class Users
      * @ORM\ManyToOne(targetEntity="App\Entity\Cities")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $City;
+    private $city;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Schools")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $School;
+    private $school;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Classes")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $Class;
+    private $class;
 
     /**
-     * @ORM\Column(type="string", length=7)
+     * @ORM\Column(type="string", length=255)
      */
     private $gender;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $status;
 
     /**
      * @ORM\Column(type="datetime")
@@ -85,10 +90,6 @@ class Users
      */
     private $updated_at;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $status;
 
     public function getId(): ?int
     {
@@ -97,36 +98,36 @@ class Users
 
     public function getSurname(): ?string
     {
-        return $this->Surname;
+        return $this->surname;
     }
 
-    public function setSurname(string $Surname): self
+    public function setSurname(string $surname): self
     {
-        $this->Surname = $Surname;
+        $this->surname = $surname;
 
         return $this;
     }
 
     public function getName(): ?string
     {
-        return $this->Name;
+        return $this->name;
     }
 
-    public function setName(string $Name): self
+    public function setName(string $name): self
     {
-        $this->Name = $Name;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function getFatherName(): ?string
+    public function getFathername(): ?string
     {
-        return $this->fatherName;
+        return $this->fathername;
     }
 
-    public function setFatherName(string $fatherName): self
+    public function setFathername(string $fathername): self
     {
-        $this->fatherName = $fatherName;
+        $this->fathername = $fathername;
 
         return $this;
     }
@@ -181,36 +182,36 @@ class Users
 
     public function getCity(): ?Cities
     {
-        return $this->City;
+        return $this->city;
     }
 
-    public function setCity(?Cities $City): self
+    public function setCity(?Cities $city): self
     {
-        $this->City = $City;
+        $this->city = $city;
 
         return $this;
     }
 
     public function getSchool(): ?Schools
     {
-        return $this->School;
+        return $this->school;
     }
 
-    public function setSchool(?Schools $School): self
+    public function setSchool(?Schools $school): self
     {
-        $this->School = $School;
+        $this->school = $school;
 
         return $this;
     }
 
     public function getClass(): ?Classes
     {
-        return $this->Class;
+        return $this->class;
     }
 
-    public function setClass(?Classes $Class): self
+    public function setClass(?Classes $class): self
     {
-        $this->Class = $Class;
+        $this->class = $class;
 
         return $this;
     }
@@ -223,6 +224,18 @@ class Users
     public function setGender(string $gender): self
     {
         $this->gender = $gender;
+
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): self
+    {
+        $this->status = $status;
 
         return $this;
     }
@@ -247,18 +260,6 @@ class Users
     public function setUpdatedAt(\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
-
-        return $this;
-    }
-
-    public function getStatus(): ?string
-    {
-        return $this->status;
-    }
-
-    public function setStatus(string $status): self
-    {
-        $this->status = $status;
 
         return $this;
     }
