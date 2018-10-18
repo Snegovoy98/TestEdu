@@ -39,7 +39,8 @@ final class Version20181018055111 extends AbstractMigration
                                                                           ('Хмельницкая область', 'ВX'),
                                                                           ('Черкасская область', 'CА'),
                                                                           ('Черниговская область', 'CВ'),
-                                                                          ('Черновицкая область', 'СE') ");
+                                                                          ('Черновицкая область', 'СE') 
+                                                                          ");
     }
 
     public function down(Schema $schema) : void
