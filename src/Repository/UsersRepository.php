@@ -21,7 +21,8 @@ class UsersRepository extends ServiceEntityRepository
 
     /**
      * @return Users[] Returns an array of Users objects
-    */
+     */
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('u')
