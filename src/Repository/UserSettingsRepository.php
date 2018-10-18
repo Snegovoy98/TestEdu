@@ -19,10 +19,10 @@ class UserSettingsRepository extends ServiceEntityRepository
         parent::__construct($registry, UserSettings::class);
     }
 
-//    /**
-//     * @return UserSettings[] Returns an array of UserSettings objects
-//     */
-    /*
+    /**
+     * @return UserSettings[] Returns an array of UserSettings objects
+     */
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('u')
@@ -34,9 +34,7 @@ class UserSettingsRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
 
-    /*
     public function findOneBySomeField($value): ?UserSettings
     {
         return $this->createQueryBuilder('u')
@@ -46,5 +44,4 @@ class UserSettingsRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
 }
