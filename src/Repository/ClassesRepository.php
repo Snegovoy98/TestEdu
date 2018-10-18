@@ -19,7 +19,7 @@ class ClassesRepository extends ServiceEntityRepository
         parent::__construct($registry, Classes::class);
     }
 
-    /**
+   /**
      * @return Classes[] Returns an array of Classes objects
      */
 
