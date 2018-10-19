@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\{TextType,
@@ -11,7 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\{TextType,
                                                 ChoiceType,
                                                 SubmitType
                                                     };
-
+use App\Entity\{Regions, Cities, Schools, Classes};
 class RegistrationType extends AbstractType
 {
     /** This Type use for rendering registration form
@@ -72,35 +73,42 @@ class RegistrationType extends AbstractType
                 'format' => 'yyyy-MM-dd',
                 'label' => 'Дата рождение'
             ])
-            ->add('regions', ChoiceType::class, [
+            ->add('regions', EntityType::class, [
+               'class' => Regions::class,
                 'attr' => ['class' => 'custom-select d-block w-100',
                     'name'  => 'region',
                     'id'   => 'region',
-                    'placeholder' => 'Choose an option'],
+                    'placeholder' => 'Choose an option'
+                ],
+                'choice_label' => 'name',
+
                 'label' => 'Область'
             ])
-            ->add('cities', ChoiceType::class, [
+            ->add('cities', EntityType::class, [
                 'attr' => ['class' => 'custom-select d-block w-100',
                            'name'  => 'city',
                             'id'   => 'city',
                             'placeholder' => 'Choose an option'],
+                'class' => Cities::class,
+                'choice_label' => 'name',
                 'label' => 'Город'
             ])
-            ->add('school', ChoiceType::class, [
+            ->add('school', EntityType::class, [
                 'attr' => ['class' => 'custom-select d-block w-100',
                            'name'  => 'school',
                            'id'   => 'school',
                            'placeholder' => 'Choose an option'],
+                'class' => Schools::class,
+                'choice_label' => 'name',
                 'label' => 'Школа'
             ])
-            ->add('class', ChoiceType::class, [
+            ->add('class', EntityType::class, [
                 'attr' => ['class' => 'custom-select d-block w-100',
                            'name'  => 'classes',
                            'id'   => 'classes',
                            'placeholder' => 'Choose an option'],
-                'choices' => [
-                    'Choose an option' => 'placeholder',
-                ],
+                'class' => Classes::class,
+                'choice_label' => 'class_number',
                 'label' => 'Класс'
             ])
             ->add('gender', ChoiceType::class, [
