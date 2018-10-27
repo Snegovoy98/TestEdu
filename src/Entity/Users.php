@@ -19,22 +19,12 @@ class Users
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $surname;
+    private $Email;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $fathername;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $email;
+    private $Username;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -42,36 +32,12 @@ class Users
     private $password;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $date_born;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Regions")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $region;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Cities")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $city;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Schools")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $school;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Classes")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $class;
-
-    /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=7)
      */
     private $gender;
 
@@ -90,56 +56,31 @@ class Users
      */
     private $updated_at;
 
-
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getSurname(): ?string
-    {
-        return $this->surname;
-    }
-
-    public function setSurname(string $surname): self
-    {
-        $this->surname = $surname;
-
-        return $this;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function getFathername(): ?string
-    {
-        return $this->fathername;
-    }
-
-    public function setFathername(string $fathername): self
-    {
-        $this->fathername = $fathername;
-
-        return $this;
-    }
-
     public function getEmail(): ?string
     {
-        return $this->email;
+        return $this->Email;
     }
 
-    public function setEmail(string $email): self
+    public function setEmail(string $Email): self
     {
-        $this->email = $email;
+        $this->Email = $Email;
+
+        return $this;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->Username;
+    }
+
+    public function setUsername(string $Username): self
+    {
+        $this->Username = $Username;
 
         return $this;
     }
@@ -164,54 +105,6 @@ class Users
     public function setDateBorn(\DateTimeInterface $date_born): self
     {
         $this->date_born = $date_born;
-
-        return $this;
-    }
-
-    public function getRegion(): ?Regions
-    {
-        return $this->region;
-    }
-
-    public function setRegion(?Regions $region): self
-    {
-        $this->region = $region;
-
-        return $this;
-    }
-
-    public function getCity(): ?Cities
-    {
-        return $this->city;
-    }
-
-    public function setCity(?Cities $city): self
-    {
-        $this->city = $city;
-
-        return $this;
-    }
-
-    public function getSchool(): ?Schools
-    {
-        return $this->school;
-    }
-
-    public function setSchool(?Schools $school): self
-    {
-        $this->school = $school;
-
-        return $this;
-    }
-
-    public function getClass(): ?Classes
-    {
-        return $this->class;
-    }
-
-    public function setClass(?Classes $class): self
-    {
-        $this->class = $class;
 
         return $this;
     }
