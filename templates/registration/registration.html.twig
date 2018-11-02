@@ -17,15 +17,17 @@
         <div class="col-md-4 order-md-2 mb-4">
     {{ form_start(form) }}
 
-    <div class="col-md-12 mb-3 col-lg-12 ">
-        {{ form_row(form.email, {label_attr: {for: 'email'} }) }}
-    </div>
-    <div class="col-md-12 mb-3 col-lg-12 ">
-        {{ form_row(form.username, {label_attr: {for: 'username'} }) }}
+     <div class="col-md-12 mb-3 col-lg-12 ">
+    {{ form_row(form.login, {label_attr: {for: 'login'} }) }}
     </div>
     <div class="col-md-12 mb-3 col-lg-12 ">
         {{ form_row(form.password, {label_attr: {for: 'password'} }) }}
     </div>
+     <div class="col-md-12 mb-3 col-lg-12 ">
+        {{ form_row(form.email, {label_attr: {for: 'email'} }) }}
+     </div><div class="col-md-12 mb-3 col-lg-12 ">
+      {{ form_row(form.username, {label_attr: {for: 'username'} }) }}
+     </div>
     <div class="col-md-12 mb-3 col-lg-12 ">
         {{ form_row(form.date_born, {label_attr: {for: 'date_born'} }) }}
     </div>
