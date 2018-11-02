@@ -22,20 +22,12 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $option)
     {
         $builder
-
-            ->add('email', EmailType::class, [
+            ->add('login', EmailType::class, [
                 'attr' => ['class'        => 'form-control',
-                           'name'         => 'email',
-                           'id'           => 'email',
-                           'placeholder'  => 'Введите email'],
-                'label' => 'Email'
-            ])
-            ->add('username', TextType::class, [
-                'attr' => ['class'       => 'form-control',
-                    'name'        => 'username',
-                    'id'          => 'username',
-                    'placeholder' =>   'Введите имя пользователя'],
-                'label' => 'Имя пользователя'
+                    'name'         => 'login',
+                    'id'           => 'login',
+                    'placeholder'  => 'Введите login'],
+                'label' => 'Login'
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
@@ -53,6 +45,20 @@ class RegistrationType extends AbstractType
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'label' => 'Дата рождение'
+            ])
+            ->add('email', EmailType::class, [
+                'attr' => ['class'        => 'form-control',
+                    'name'         => 'email',
+                    'id'           => 'email',
+                    'placeholder'  => 'Введите email'],
+                'label' => 'Email'
+            ])
+            ->add('username', TextType::class, [
+                'attr' => ['class'       => 'form-control',
+                    'name'        => 'username',
+                    'id'          => 'username',
+                    'placeholder' =>   'Введите имя пользователя'],
+                'label' => 'Имя пользователя'
             ])
             ->add('gender', ChoiceType::class, [
                 'attr' => ['class' => 'custom-select d-block w-100',
