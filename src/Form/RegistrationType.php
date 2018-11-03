@@ -22,12 +22,12 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $option)
     {
         $builder
-            ->add('login', EmailType::class, [
+            ->add('email', EmailType::class, [
                 'attr' => ['class'        => 'form-control',
-                    'name'         => 'login',
-                    'id'           => 'login',
-                    'placeholder'  => 'Введите login'],
-                'label' => 'Login'
+                    'name'         => 'email',
+                    'id'           => 'email',
+                    'placeholder'  => 'Введите email'],
+                'label' => 'Email'
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
@@ -38,6 +38,20 @@ class RegistrationType extends AbstractType
                 'first_options'  => ['label' => 'Пароль'],
                 'second_options' => ['label' => 'Повторите пароль']
             ])
+            ->add('firstName', TextType::class, [
+                'attr' => ['class'        => 'form-control',
+                    'name'         => 'firstName',
+                    'id'           => 'firstName',
+                    'placeholder'  => 'Введите Имя'],
+                'label' => 'Login'
+            ])
+            ->add('lastName', TextType::class, [
+                'attr' => ['class'       => 'form-control',
+                    'name'        => 'lastName',
+                    'id'          => 'lastName',
+                    'placeholder' =>   'Введите фамилию'],
+                'label' => 'Имя пользователя'
+            ])
             ->add('date_born', BirthdayType::class, [
                 'attr' => ['class'  => 'custom-select d-block w-100',
                            'name'   => 'born_date',
@@ -45,20 +59,6 @@ class RegistrationType extends AbstractType
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'label' => 'Дата рождение'
-            ])
-            ->add('email', EmailType::class, [
-                'attr' => ['class'        => 'form-control',
-                    'name'         => 'email',
-                    'id'           => 'email',
-                    'placeholder'  => 'Введите email'],
-                'label' => 'Email'
-            ])
-            ->add('username', TextType::class, [
-                'attr' => ['class'       => 'form-control',
-                    'name'        => 'username',
-                    'id'          => 'username',
-                    'placeholder' =>   'Введите имя пользователя'],
-                'label' => 'Имя пользователя'
             ])
             ->add('gender', ChoiceType::class, [
                 'attr' => ['class' => 'custom-select d-block w-100',
