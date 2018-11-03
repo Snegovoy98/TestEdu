@@ -17,11 +17,6 @@ class UserSettings
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $avatar;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Users")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -30,18 +25,6 @@ class UserSettings
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getAvatar(): ?string
-    {
-        return $this->avatar;
-    }
-
-    public function setAvatar(string $avatar): self
-    {
-        $this->avatar = $avatar;
-
-        return $this;
     }
 
     public function getUser(): ?Users
