@@ -9,12 +9,15 @@
 {% block body %}
 <div class="container col-lg-12 align-content-center">
     <form class="form-signin" method="post" action="{{ path('login') }}">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
         <div class="text-center mb-4">
             <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
         </div>
 
         <div class="form-label-group">
-            <input type="email" id="inputEmail" class="form-control" name="_username" placeholder="Email address" required autofocus>
+            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
             <label for="inputEmail">Email address</label>
         </div>
 
@@ -30,6 +33,9 @@
         </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        >
         <a href="{{ path('registration') }}">Регистрация</a>
     </form>
 
