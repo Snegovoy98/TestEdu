@@ -36,12 +36,12 @@ class Users implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $login;
+    private $FirstName;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Username;
+    private $LastName;
 
     /**
      * @ORM\Column(type="date")
@@ -141,21 +141,26 @@ class Users implements UserInterface
         // $this->plainPassword = null;
     }
 
-    public function getLogin(): ?string
+    public function getFirstName(): ?string
     {
-        return $this->login;
+        return $this->FirstName;
     }
 
-    public function setLogin(string $login): self
+    public function setFirstName(string $FirstName): self
     {
-        $this->login = $login;
+        $this->FirstName = $FirstName;
 
         return $this;
     }
 
-    public function setUsername(string $Username): self
+    public function getLastName(): ?string
     {
-        $this->Username = $Username;
+        return $this->LastName;
+    }
+
+    public function setLastName(string $LastName): self
+    {
+        $this->LastName = $LastName;
 
         return $this;
     }
