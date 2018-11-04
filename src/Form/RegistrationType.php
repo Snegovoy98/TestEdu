@@ -42,14 +42,14 @@ class RegistrationType extends AbstractType
                     'name'         => 'firstName',
                     'id'           => 'firstName',
                     'placeholder'  => 'Введите Имя'],
-                'label' => 'Login'
+                'label' => 'Введите Имя'
             ])
             ->add('lastName', TextType::class, [
                 'attr' => ['class'       => 'form-control',
                     'name'        => 'lastName',
                     'id'          => 'lastName',
                     'placeholder' =>   'Введите фамилию'],
-                'label' => 'Имя пользователя'
+                'label' => 'Введите фамилию'
             ])
             ->add('date_born', BirthdayType::class, [
                 'attr' => ['class'  => 'custom-select d-block w-100',
@@ -71,7 +71,7 @@ class RegistrationType extends AbstractType
                 ],
                 'label' => 'Пол'
             ])
-            ->add('registration', SubmitType::class, [
+             ->add('registration', SubmitType::class, [
                'attr' => ['class' => 'btn btn-primary btn-lg btn-block',
                           'value' => 'Зарегистрироваться']
             ])
