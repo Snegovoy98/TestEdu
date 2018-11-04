@@ -23,7 +23,7 @@ class Users implements UserInterface
     private $email;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="array")
      */
     private $roles = [];
 
@@ -36,15 +36,15 @@ class Users implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $FirstName;
+    private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $LastName;
+    private $lastName;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $date_born;
 
@@ -54,12 +54,12 @@ class Users implements UserInterface
     private $gender;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $created_at;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated_at;
 
@@ -143,24 +143,24 @@ class Users implements UserInterface
 
     public function getFirstName(): ?string
     {
-        return $this->FirstName;
+        return $this->firstName;
     }
 
-    public function setFirstName(string $FirstName): self
+    public function setFirstName(string $firstName): self
     {
-        $this->FirstName = $FirstName;
+        $this->firstName = $firstName;
 
         return $this;
     }
 
     public function getLastName(): ?string
     {
-        return $this->LastName;
+        return $this->lastName;
     }
 
-    public function setLastName(string $LastName): self
+    public function setLastName(string $lastName): self
     {
-        $this->LastName = $LastName;
+        $this->lastName = $lastName;
 
         return $this;
     }
@@ -194,9 +194,9 @@ class Users implements UserInterface
         return $this->created_at;
     }
 
-    public function setCreatedAt(\DateTimeInterface $created_at): self
+    public function setCreatedAt(?\DateTimeInterface $created_at): self
     {
-        $this->created_at = $created_at;
+        $this->created_at = \DateTime::class;
 
         return $this;
     }
@@ -206,9 +206,9 @@ class Users implements UserInterface
         return $this->updated_at;
     }
 
-    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
-        $this->updated_at = $updated_at;
+        $this->updated_at = \DateTime::class;
 
         return $this;
     }
