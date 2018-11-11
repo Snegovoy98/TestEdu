@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Users;
-use App\Service\SendMessages;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\RegistrationType;
@@ -19,7 +18,6 @@ class RegistrationController extends AbstractController
     public function index(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         $users = new Users();
-        $sendMessages = new SendMessages();
          $form = $this->createForm(RegistrationType::class, $users);
 
          $form->handleRequest($request);
