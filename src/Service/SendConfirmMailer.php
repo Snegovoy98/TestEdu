@@ -4,7 +4,6 @@ namespace App\Service;
 
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class SendConfirmMailer implements ContainerAwareInterface
 {
