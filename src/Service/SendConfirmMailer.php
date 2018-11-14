@@ -16,7 +16,7 @@ class SendConfirmMailer implements ContainerAwareInterface
         $this->mailer = $mailer;
     }
 
-    public function index(array $data): bool
+    public function send(array $data): bool
     {
         $message = (new \Swift_Message("Добро пожаловать на сервис testEdu, рады приветствовать"))
             ->setFrom($this->teamMail)
