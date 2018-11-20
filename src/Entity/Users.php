@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UsersRepository")
@@ -19,6 +20,7 @@ class Users implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank
      */
     private $email;
 
@@ -30,36 +32,43 @@ class Users implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\NotBlank
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $lastName;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\NotBlank
      */
     private $date_born;
 
     /**
      * @ORM\Column(type="string", length=7)
+     * @Assert\NotBlank
      */
     private $gender;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Assert\NotBlank
      */
     private $created_at;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Assert\NotBlank
      */
     private $updated_at;
 
